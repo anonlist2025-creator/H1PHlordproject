@@ -1,375 +1,248 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excursão Hopi Hari - ETOPS</title>
+    <title>🚨 NOVIDADE ABSURDA - ETIPS</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Arial Black', sans-serif;
+            background-color: #000000;
+            color: white;
+            text-align: center;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-            padding: 15px;
-            max-width: 100%;
-            margin: 0 auto;
-            background-image: url('https://i.imgur.com/your-image.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        
-        .content-wrapper {
-            background-color: rgba(0, 0, 0, 0.85);
-            border-radius: 15px;
-            padding: 20px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            margin: 0 auto;
-            max-width: 800px;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #4CAF50;
-        }
-        
-        .logo {
-            font-size: clamp(24px, 3vw, 28px);
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #4CAF50;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        h1, h2 {
-            color: #4CAF50;
-            font-size: clamp(20px, 2.5vw, 24px);
-            margin: 15px 0;
-        }
-        
-        p, li {
-            margin-bottom: 10px;
-        }
-        
-        .participant-list {
-            margin-bottom: 30px;
-            background-color: rgba(20, 20, 20, 0.7);
-            padding: 15px;
+        .container {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 3px solid;
             border-radius: 10px;
-            border: 1px solid #333;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: borderGlow 8s infinite alternate;
         }
-        
-        .participant-item {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: rgba(30, 30, 30, 0.7);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            gap: 8px;
+
+        @keyframes borderGlow {
+            0% { border-color: #FFD700; box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); } /* Dourado */
+            20% { border-color: #9370DB; box-shadow: 0 0 30px rgba(147, 112, 219, 0.6); } /* Roxo */
+            40% { border-color: #FF69B4; box-shadow: 0 0 30px rgba(255, 105, 180, 0.6); } /* Rosa */
+            60% { border-color: #00FF00; box-shadow: 0 0 30px rgba(0, 255, 0, 0.6); } /* Verde */
+            80% { border-color: #FF4500; box-shadow: 0 0 30px rgba(255, 69, 0, 0.6); } /* Vermelho */
+            100% { border-color: #1E90FF; box-shadow: 0 0 30px rgba(30, 144, 255, 0.6); } /* Azul */
         }
-        
-        .participant-number {
-            min-width: 30px;
-            font-weight: bold;
-            color: #4CAF50;
-            font-size: 16px;
-        }
-        
-        .name-input {
-            flex: 1;
-            min-width: 150px;
-            padding: 8px;
-            border: 1px solid #444;
-            border-radius: 6px;
-            background-color: #222;
-            color: #fff;
-            font-size: 14px;
-        }
-        
-        .confirmation-input {
-            width: 100px;
-            padding: 8px;
-            border: 1px solid #444;
-            border-radius: 6px;
-            background-color: #222;
-            color: #fff;
-            font-size: 14px;
-        }
-        
-        .confirmation-button {
-            padding: 8px 15px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            white-space: nowrap;
-        }
-        
-        .confirmation-button:hover {
-            background-color: #45a049;
-        }
-        
-        .confirmed {
-            color: #4CAF50;
-            font-weight: bold;
-            font-size: 14px;
-            margin-left: auto;
-            display: none;
-        }
-        
-        .trip-info, .alert-box, .payment-info, .security-info {
-            padding: 15px;
-            border-radius: 10px;
+
+        h1 {
+            font-size: 2.2rem;
             margin-bottom: 20px;
-            border: 1px solid #333;
+            text-shadow: 0 0 10px;
+            animation: textGlow 8s infinite alternate;
         }
-        
-        .trip-info {
-            background-color: rgba(20, 20, 20, 0.7);
+
+        @keyframes textGlow {
+            0% { color: #FFD700; text-shadow: 0 0 10px #FFD700; } /* Dourado */
+            20% { color: #9370DB; text-shadow: 0 0 10px #9370DB; } /* Roxo */
+            40% { color: #FF69B4; text-shadow: 0 0 10px #FF69B4; } /* Rosa */
+            60% { color: #00FF00; text-shadow: 0 0 10px #00FF00; } /* Verde */
+            80% { color: #FF4500; text-shadow: 0 0 10px #FF4500; } /* Vermelho */
+            100% { color: #1E90FF; text-shadow: 0 0 10px #1E90FF; } /* Azul */
         }
-        
-        .alert-box {
-            background-color: rgba(255, 152, 0, 0.2);
-            border-left: 4px solid #FF9800;
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
         }
-        
-        .payment-info {
-            background-color: rgba(76, 175, 80, 0.2);
-            border-left: 4px solid #4CAF50;
+
+        .countdown-box {
+            background-color: #111;
+            border: 1px solid;
+            border-radius: 5px;
+            padding: 15px;
+            min-width: 80px;
+            animation: borderGlow 8s infinite alternate;
         }
-        
-        .security-info {
-            background-color: rgba(33, 150, 243, 0.2);
-            border-left: 4px solid #2196F3;
-        }
-        
-        .discord-link {
-            margin: 20px auto;
-            padding: 12px;
-            background-color: #7289DA;
-            color: white;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            display: block;
+
+        .countdown-value {
+            font-size: 2.5rem;
             font-weight: bold;
-            font-size: clamp(16px, 2vw, 18px);
-            transition: all 0.3s;
-            max-width: 500px;
+            animation: textGlow 8s infinite alternate;
         }
-        
-        .discord-link:hover {
-            background-color: #5a6fb3;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            animation: textGlow 8s infinite alternate;
         }
-        
-        .emoji {
-            font-size: 1.2em;
-            margin: 0 3px;
+
+        .message {
+            margin: 25px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #FFF;
         }
-        
-        .footer {
-            text-align: center;
+
+        .highlight {
+            font-weight: bold;
+            animation: textGlow 8s infinite alternate;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #FFD700, #9370DB, #FF69B4, #00FF00, #FF4500, #1E90FF);
+            background-size: 400% 400%;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: none;
+            text-decoration: none;
+            animation: gradientBG 8s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .instagram {
             margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #333;
-            color: #aaa;
-            font-size: 13px;
+            font-size: 1rem;
+            color: #FFF;
         }
-        
-        @media (max-width: 600px) {
-            .content-wrapper {
-                padding: 15px;
-            }
-            
-            .participant-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .name-input, .confirmation-input {
-                width: 100%;
-            }
-            
-            .confirmation-button {
-                width: 100%;
-                margin-top: 5px;
-            }
-            
-            .confirmed {
-                margin-left: 0;
-                margin-top: 5px;
-            }
+
+        .instagram a {
+            text-decoration: none;
+            font-weight: bold;
+            animation: textGlow 8s infinite alternate;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .small-note {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            color: #AAA;
+        }
+
+        @media (max-width: 500px) {
+            h1 { font-size: 1.8rem; }
+            .countdown-box { min-width: 60px; padding: 10px; }
         }
     </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <div class="header">
-            <div class="logo">Excursão Hopi Hari</div>
-            <h1>Centro Educacional ETOPS</h1>
-            <p>Um passeio organizado por alunos para alunos</p>
+    <div class="container pulse">
+        <h1>🚨 MEGA NOVIDADE ETIPS 🚨</h1>
+        
+        <div class="message">
+            <p>Uma <span class="highlight">revolução</span> está chegando para os estudantes do <span class="highlight">ETIPS</span>!</p>
+            <p>Algo tão <span class="highlight">grandioso</span> que vai deixar todo mundo sem palavras...</p>
+            <p>Quem ficar de fora vai <span class="highlight">SE ARREPENDER</span> para sempre!</p>
+        </div>
+        
+        <div class="countdown">
+            <div class="countdown-box">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Dias</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Horas</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutos</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Segundos</div>
+            </div>
+        </div>
+        
+        <div class="message">
+            <p>Não perca <span class="highlight">PRÊMIOS</span> exclusivos e a <span class="highlight">MAIOR RESENHA</span> do ano!</p>
+            <p class="small-note">No final da contagem, o botão para o site será liberado!</p>
         </div>
 
-        <div class="participant-list">
-            <h2>📋 Lista de Participantes</h2>
-            <p>Preencha seu nome e o código de confirmação para garantir sua vaga:</p>
-            
-            <div id="participants-container"></div>
-        </div>
-
-        <div class="trip-info">
-            <div class="alert-box">
-                <h2>🚨 Atenção, galera do ETOPS!</h2>
-                <p>Este site foi criado exclusivamente para organizar nossa excursão para o Hopi Hari, já que a escola não oferece suporte para esse tipo de evento. Esta organização está sendo feita por fora da escola, somente entre colegas, com o objetivo de proporcionar um rolê legal para quem quer participar.</p>
-                <p>Não estamos aqui para criticar a escola, e sim para garantir que a galera tenha uma experiência única e divertida! 🎢</p>
-            </div>
-
-            <h2>📌 Como vai funcionar?</h2>
-            <p>O objetivo é fazer tudo de forma organizada e com total transparência. Aqui vamos compartilhar todas as informações:</p>
-            <ul>
-                <li>📍 Local de encontro</li>
-                <li>⏰ Horário da viagem</li>
-                <li>🏢 Agência responsável</li>
-                <li>📅 Data do passeio</li>
-                <li>💲 Valores e formas de pagamento</li>
-            </ul>
-
-            <div class="payment-info">
-                <h2>💳 Sobre o pagamento</h2>
-                <p>Fiquem tranquilos que o pagamento será feito <strong>diretamente para a agência de viagens</strong>, sem passar por ninguém da nossa organização ou professores. Tudo direto e seguro, sem intermediários!</p>
-            </div>
-
-            <div class="security-info">
-                <h2>🔐 Segurança</h2>
-                <p>A agência vai cuidar de todo o transporte e da logística da viagem, desde nosso embarque até o retorno. O local e horário exatos serão divulgados com antecedência para que ninguém fique perdido.</p>
-            </div>
-
-            <h2>📢 Importante!</h2>
-            <p>Todos os detalhes e o código de confirmação serão compartilhados no nosso grupo exclusivo do Discord:</p>
-
-            <a href="https://discord.gg/3FhMgaYt" class="discord-link">
-                <span class="emoji">💥</span> ENTRAR NO DISCORD AGORA <span class="emoji">💥</span>
-            </a>
-
-            <p style="text-align: center; font-weight: bold; font-size: 1.2em; margin-top: 30px;">
-                <span class="emoji">🎡</span> Vai ser um dia incrível! Nos vemos no Hopi Hari! <span class="emoji">🎡</span>
-            </p>
-        </div>
-
-        <div class="footer">
-            <p>Organização independente de alunos do ETOPS • Não vinculado à escola</p>
-            <p>© 2025 - Todos os direitos reservados</p>
+        <a href="https://anonlist2025-creator.github.io/11HPHlordproject/" id="accessBtn" class="btn">ACESSAR SITE ETIPS</a>
+        
+        <div class="instagram">
+            Siga <a href="https://instagram.com/Lord_Anonim0" target="_blank">@Lord_Anonim0</a> e não perca NADA!
         </div>
     </div>
 
     <script>
-        const validCodes = [
-            '211234', '845621', '390157', '726489', '153024',
-            '987532', '642813', '459076', '304598', '567321',
-            '892645', '135790', '678452', '923187', '246801',
-            '580236', '714953', '329604', '465812', '908173',
-            '257934', '631405', '842619', '375028', '596142',
-            '120987', '754302', '983516', '208465', '537291',
-            '619843', '372058', '504726', '861479', '295384',
-            '430917', '748562', '913205', '624738', '357920',
-            '482651', '809314', '146825', '573098', '921467',
-            '638250', '704193', '259476', '386529', '512874',
-            '647901', '830215', '964782', '201356', '579463',
-            '000002', '000001'
-        ];
-
-        const usedCodes = new Set();
-        const participantsContainer = document.getElementById('participants-container');
-        const numParticipants = 62;
-        
-        for (let i = 1; i <= numParticipants; i++) {
-            const participantDiv = document.createElement('div');
-            participantDiv.className = 'participant-item';
-            participantDiv.innerHTML = `
-                <div class="participant-number">${i}.</div>
-                <input type="text" class="name-input" placeholder="Seu nome completo">
-                <input type="text" class="confirmation-input" placeholder="Código" maxlength="6" disabled>
-                <button class="confirmation-button" disabled>Confirmar</button>
-                <span class="confirmed">✓ Confirmado</span>
-            `;
-            participantsContainer.appendChild(participantDiv);
+        // Configura a data alvo (próxima segunda-feira às 10:30)
+        function getNextMonday10AM() {
+            const now = new Date();
+            const nextMonday = new Date();
+            
+            nextMonday.setDate(now.getDate() + (1 + 7 - now.getDay()) % 7);
+            nextMonday.setHours(10, 30, 0, 0);
+            
+            if (nextMonday < now) {
+                nextMonday.setDate(nextMonday.getDate() + 7);
+            }
+            
+            return nextMonday;
         }
 
-        document.querySelectorAll('.name-input').forEach(input => {
-            input.addEventListener('input', function() {
-                const participantItem = this.closest('.participant-item');
-                const codeInput = participantItem.querySelector('.confirmation-input');
-                const confirmButton = participantItem.querySelector('.confirmation-button');
-                
-                if (this.value.trim() !== '') {
-                    codeInput.disabled = false;
-                    confirmButton.disabled = false;
-                } else {
-                    codeInput.disabled = true;
-                    confirmButton.disabled = true;
-                }
-            });
-        });
+        const targetDate = getNextMonday10AM();
+        const accessBtn = document.getElementById('accessBtn');
 
-        document.querySelectorAll('.confirmation-button').forEach(button => {
-            button.addEventListener('click', function() {
-                const participantItem = this.closest('.participant-item');
-                const nameInput = participantItem.querySelector('.name-input');
-                const codeInput = participantItem.querySelector('.confirmation-input');
-                const confirmedSpan = participantItem.querySelector('.confirmed');
-                const code = codeInput.value;
-                
-                if (validCodes.includes(code) && !usedCodes.has(code)) {
-                    nameInput.disabled = true;
-                    codeInput.disabled = true;
-                    this.disabled = true;
-                    confirmedSpan.style.display = 'inline';
-                    participantItem.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
-                    participantItem.style.borderLeft = '4px solid #4CAF50';
-                    usedCodes.add(code); // Marca o código como usado
-                } else {
-                    alert('Código incorreto ou já utilizado! Verifique o código fornecido no Discord.');
-                }
-            });
-        });
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                accessBtn.style.display = 'inline-block'; // Mostra o botão quando acabar
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
-    
-      const firebaseConfig = {
-        apiKey: "AIzaSyAJI-WLv1A9OOR4TMT4ewXrmy5xhL6AHqQ",
-        authDomain: "lordanonhph.firebaseapp.com",
-        projectId: "lordanonhph",
-        storageBucket: "lordanonhph.firebasestorage.app",
-        messagingSenderId: "447378401478",
-        appId: "1:447378401478:web:53cb7c211b1f8042d24fc7",
-        measurementId: "G-8Y7SHLW23P"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
 </html>
-```
